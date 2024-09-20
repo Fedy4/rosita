@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 Girasoles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos */
+        body {
+            background: linear-gradient(to bottom, #fff9e6, #ffcccb);
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: #ff6347;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5em;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #flowers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Estilos para las flores */
+        .flower {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .flower img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .flower:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .flower:active img {
+            transform: scale(1.2);
+        }
+
+        .flower img.clicked {
+            opacity: 0.4;
+            transform: scale(1);
+        }
+
+        /* Animaciones y estilos de los mensajes */
+        .message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            color: #ff6347;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: visibility 0s, opacity 2s ease, transform 1.5s ease;
+        }
+
+        .message.visible {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .flower-message {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .flower-message.visible {
+            opacity: 1;
+        }
+
+        /* Galería responsiva */
+        .gallery {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 150px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Video */
+        .video-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* Música */
+        audio {
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Responsividad para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .flower img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .gallery img {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .flower img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .gallery img {
+                width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>21 Girasoles para Ti</h1>
+
+    <div id="flowers-container"></div>
+    <div class="message" id="final-message">Te amo más que a estos 21 girasoles 🌻❤️</div>
+
+    <!-- Galería de fotos -->
+    <div class="gallery" id="photo-gallery">
+        <img src="imgen/recuerdo.PNG.PNG" alt="Recuerdo 1">
+        <img src="imgen/recuerdo2.jpeg.jpeg" alt="Recuerdo 2">
+        <img src="imgen/recuerdo3.jpeg.jpg" alt="Recuerdo 3">
+        <img src="imgen/recuerdo4.png" alt="Recuerdo 4">
+        <img src="imgen/recuerdo5.jpg" alt="Recuerdo 5">
+        <img src="imgen/recuerdo6.jpeg" alt="Recuerdo 6">
+        <img src="imgen/recuerdo7.jpg" alt="Recuerdo 7">
+        <img src="imgen/recuerdo8.jpg" alt="Recuerdo 8">
+        <img src="imgen/recuerdo9.png" alt="Recuerdo 9">
+
+    </div>
+
+    <!-- Video -->
+    <div class="video-container" id="video-container">
+        <video controls>
+            <source src="imgen/mivideo.mp4.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+   
+
+
+    <!-- Música -->
+    <audio id="background-music" controls autoplay loop>
+        <source src="imgen/palmar.mp3.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+    </audio>
+    <div class="gallery" id="photo-gallery">
+        <img src= "imgen/rosa1.jpeg.jpeg" alt="rosa1">
+        <img src= "imgen/rosa2.jpeg.jpeg" alt="rosa2">
+        <img src= "imgen/rosa3.jpeg.jpeg" alt="rosa3">
+        <img src= "imgen/rosa4.jpeg.PNG" alt="rosa4">
+        <img src= "imgen/rosa5.jpeg.jpeg" alt="rosa5">
+        <img src= "imgen/rosa6.jpeg.jpeg" alt="rosa6">
+        <img src= "imgen/rosa7.jpeg.jpeg" alt="rosa7">
+        <img src= "imgen/rosa8.jpeg.jpeg" alt="rosa8">
+        <img src= "imgen/rosa9.jpeg.jpg" alt="rosa9">
+        <img src= "imgen/rosa10.jpeg.jpg" alt="rosa10">
+        <img src= "imgen/rosa11.jpeg.jpg" alt="rosa11">
+        <img src= "imgen/rosa12.jpeg.jpg" alt="rosa12">
+        <img src= "imgen/rosa13.jpeg.jpg" alt="rosa13">
+        <img src= "imgen/rosa14.jpeg.jpeg" alt="rosa14">
+        <img src= "imgen/rosa15.jpeg.png" alt="rosa15">
+        <img src= "imgen/rosa16.jpeg.png" alt="rosa16">
+        <img src= "imgen/rosa17.jpeg.jpeg" alt="rosa17">
+        <img src= "imgen/rosa18.jpeg.png" alt="rosa18">
+        <img src= "imgen/rosa19.jpeg.png" alt="rosa19">
+        <img src= "imgen/rosa20.jpeg.jpg" alt="rosa20">
+        <img src= "imgen/rosa21.jpeg.PNG" alt="rosa21">
+        
+    </div>
+    <script>
+        const totalFlowers = 21;
+        let clickedFlowers = 0;
+
+        const flowersContainer = document.getElementById('flowers-container');
+        const finalMessage = document.getElementById('final-message');
+        const gallery = document.getElementById('photo-gallery');
+        const videoContainer = document.getElementById('video-container');
+
+        // Mensajes personalizados
+        const flowerMessages = [
+            "¡Eres mi sol!", "Cada día te quiero más", "Tu sonrisa ilumina mi vida", 
+            "Eres única", "Contigo, todo es mejor", "Mi amor por ti crece", 
+            "Siempre en mi corazón", "Me haces tan feliz", "Eres mi razón de ser", 
+            "No puedo dejar de pensar en ti", "Tú eres mi paz", "Eres mi inspiración", 
+            "Te amo más cada día", "Gracias por estar conmigo", "Eres mi todo", 
+            "Nada es igual sin ti", "Me haces sentir especial", "Mi corazón es tuyo", 
+            "Juntos somos imparables", "Mi vida es mejor contigo", "Eres el amor de mi vida"
+        ];
+
+        // Lista de imágenes con rutas relativas
+        const flowerImages = [
+            "imgen/rosa1.jpeg.jpeg", "imgen/rosa2.jpeg.jpeg", "imgen/rosa3.jpeg.jpeg", "imgen/rosa4.jpeg.PNG", "imgen/rosa5.jpeg.jpeg", 
+            "imgen/rosa6.jpeg.jpeg", "imgen/rosa7.jpeg.jpeg", "imgen/rosa8.jpeg.jpeg", "imgen/rosa9.jpeg.jpg", "imgen/rosa10.jpeg.jpg",
+            "imgen/rosa11.jpeg.jpg", "imgen/rosa12.jpeg.jpg", "imgen/rosa13.jpeg.jpg", "imgen/rosa14.jpeg.jpeg", "imgen/rosa15.jpeg.png", 
+            "imgen/rosa16.jpeg.png", "imgen/rosa17.jpeg.jpeg", "imgen/rosa18.jpeg.png", "imgen/rosa19.jpeg.png", "imgen/rosa20.jpeg.jpg", 
+            "imgen/rosa21.jpeg.PNG"
+        ];
+
+        // Crear 21 girasoles
+        for (let i = 0; i < totalFlowers; i++) {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.innerHTML = `
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE4EF5bV2b2KHbdhJX1jAqYn6C0h9YN7ffgQ&s" alt="Girasol">
+                <div class="flower-message">${flowerMessages[i]}</div>`;
+            flowersContainer.appendChild(flower);
+
+            flower.addEventListener('click', () => {
+                clickedFlowers++;
+                flower.querySelector('img').classList.add('clicked');
+                flower.querySelector('.flower-message').classList.add('visible');
+                flower.style.pointerEvents = 'none'; // Deshabilitar más clics en esta flor
+
+                // Seleccionar una imagen aleatoria
+                const randomImage = flowerImages[Math.floor(Math.random() * flowerImages.length)];
+                flower.querySelector('img').src = randomImage; // Cambiar imagen del girasol
+
+                // Mostrar galería y video al finalizar
+                if (clickedFlowers === totalFlowers) {
+                    finalMessage.classList.add('visible'); // Mostrar mensaje final con animación
+                    gallery.style.display = 'flex'; // Mostrar galería
+                    videoContainer.style.display = 'block'; // Mostrar video
+                }
+            });
+        }
+    </script>
+</body>
+</html>
